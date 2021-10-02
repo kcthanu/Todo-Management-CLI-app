@@ -58,7 +58,7 @@ class Todo < ActiveRecord::Base
   def self.mark_as_complete(todo_id)
     todo = Todo.find(todo_id)
     todo.completed = true
-    todo.save
+    todo.save!
   end
   
 end
