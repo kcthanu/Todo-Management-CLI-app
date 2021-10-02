@@ -56,7 +56,9 @@ class Todo < ActiveRecord::Base
   end
   
   def self.mark_as_complete(todo_id)
-     Todo.where("id = ?", todo_id).update({'completed': true})
+    todo = Todo.find(todo_id)
+    todo.completed = true
+    todo.save
   end
   
 end
